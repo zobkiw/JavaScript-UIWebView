@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<style type="text/css">body{font-family:"Avenir", serif;} a:link{color:gray;}</style>
+		<title>hello</title>
+	</head>
+	<body>
+		
+		<h3>JavaScript-UIWebView</h3>
+		
+		<p>A simple example showing how to communicate via UIWebView between Obj-C and JavaScript and back</p>
+		
+		<script type="text/javascript" charset="utf-8">
+			function doButton() {
+				a = '%inject%'; // This is replaced by text generated from our Obj-C code
+				if (confirm(a)) {
+					// When this is set, our UIWebView delegate is called in the Obj-C code
+					location.href = 'abc://test?param=cool&another=hot';
+				}
+			}
+		</script>
+		<input type="button" onclick="doButton();" value="Click Me First" />
+		
+		<br /><br />
+		
+		<!-- Clicking this link also calls the UIWebView delegate -->
+		<a href="abc://well hello there!">Here is another link to try clicking - check the NSLog output</a>
+		
+		<br /><br />
+
+		<a href="http://zobcode.com">A normal link just to show they still work as expected</a>
+		
+	</body>
+</html>
+
